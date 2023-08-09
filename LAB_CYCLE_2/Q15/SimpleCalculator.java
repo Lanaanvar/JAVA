@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package LAB_CYCLE_2.Q5;
-
+package Q15;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -16,7 +11,7 @@ import javax.swing.JTextField;
 public class SimpleCalculator extends JFrame {
 
     JPanel myPanel;
-    JButton addBtn, subBtn, equalBtn, clearBtn, multBtn, divBtn;
+    JButton addBtn, subBtn, equalBtn, clearBtn;
     JTextField textField1;
 
     double num1, num2, result;
@@ -31,16 +26,12 @@ public class SimpleCalculator extends JFrame {
         addBtn = new JButton("+");
         subBtn = new JButton("-");
         equalBtn = new JButton("=");
-        multBtn= new JButton("*");
-        divBtn= new JButton("/");
         clearBtn = new JButton("Clear");
 
         myPanel = new JPanel();
         myPanel.setLayout(new GridLayout(2, 2, 10, 10));
         myPanel.add(addBtn);
         myPanel.add(subBtn);
-        myPanel.add(multBtn);
-        myPanel.add(divBtn);
         myPanel.add(equalBtn);
         myPanel.add(clearBtn);
 
@@ -52,7 +43,7 @@ public class SimpleCalculator extends JFrame {
                 num1 = Double.parseDouble(textField1.getText());
                 operator = '+';
                 textField1.setText("");
-//                textField1.setText("+");
+                textField1.setText("+");
             }
         });
 
@@ -61,23 +52,7 @@ public class SimpleCalculator extends JFrame {
                 num1 = Double.parseDouble(textField1.getText());
                 operator = '-';
                 textField1.setText("");
-//                textField1.setText("-");
-            }
-        });
-        multBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                num1 = Double.parseDouble(textField1.getText());
-                operator = '*';
-                textField1.setText("");
-//                textField1.setText("*");
-            }
-        });
-        divBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                num1 = Double.parseDouble(textField1.getText());
-                operator = '/';
-                textField1.setText("");
-//                textField1.setText("/");
+                textField1.setText("-");
             }
         });
 
@@ -88,16 +63,6 @@ public class SimpleCalculator extends JFrame {
                     case '+':
                         result = num1 + num2;
                         break;
-                    case '-':
-                        result=num1-num2;
-                        break;
-                    case '*':
-                        result=num1*num2;
-                        break;
-                    case '/':
-                        result=num1/num2;
-                        break;
-                    
                 }
 
                 textField1.setText(String.valueOf(result));
@@ -115,4 +80,23 @@ public class SimpleCalculator extends JFrame {
     }
 
     
+}
+
+class SimpleCalculatorMain {
+//
+//    /**
+//     * @param args the command line arguments
+//     */
+
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+//                new SimpleCalculator();
+//            }
+//        });
+//    }
+//}
+    public static void main(String[] args) {
+        new SimpleCalculator();
+    }
 }

@@ -4,12 +4,6 @@
  */
 package LAB_CYCLE_2.Q5;
 
-import javax.swing.SwingUtilities;
-
-/**
- *
- * @author lanaa
- */
 public class SimpleCalculatorMain {
 //
 //    /**
